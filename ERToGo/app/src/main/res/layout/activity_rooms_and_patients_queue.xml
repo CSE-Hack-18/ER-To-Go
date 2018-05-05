@@ -10,64 +10,91 @@
         android:id="@+id/ROOM1"
         android:layout_width="88dp"
         android:layout_height="48dp"
+
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginTop="134dp"
+        android:layout_alignStart="@+id/ROOM2"
+        android:layout_marginTop="135dp"
         android:background="#00FF00"
         android:gravity="center"
-
-        android:text="ROOM1" />
+        android:radius="10dp"
+        android:text="101" />
 
     <TextView
         android:id="@+id/ROOM2"
         android:layout_width="88dp"
         android:layout_height="48dp"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginTop="202dp"
+        android:layout_alignStart="@+id/ROOM3"
+        android:layout_marginTop="195dp"
         android:background="#00FF00"
         android:gravity="center"
-        android:text="ROOM2" />
+        android:radius="10dp"
+        android:text="104" />
 
     <TextView
         android:id="@+id/ROOM3"
         android:layout_width="88dp"
         android:layout_height="48dp"
+        android:layout_alignEnd="@+id/auto_alloc"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginBottom="193dp"
+        android:layout_marginBottom="207dp"
         android:background="#00FF00"
         android:gravity="center"
-        android:text="ROOM3" />
+        android:radius="10dp"
+        android:text="108" />
 
     <TextView
         android:id="@+id/ROOM4"
         android:layout_width="88dp"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginBottom="119dp"
+        android:layout_alignStart="@+id/ROOM1"
+        android:layout_marginBottom="148dp"
         android:background="#00FF00"
         android:gravity="center"
-        android:text="ROOM4" />
+        android:radius="10dp"
+        android:text="206b" />
 
     <TextView
         android:id="@+id/ROOM5"
         android:layout_width="88dp"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginBottom="48dp"
+        android:layout_alignStart="@+id/ROOM1"
+        android:layout_marginBottom="84dp"
         android:background="#00FF00"
         android:gravity="center"
-        android:text="ROOM5" />
+        android:radius="10dp"
+        android:text="206c" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        app:srcCompat="@android:color/holo_orange_light" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/waiting_count"
+        android:layout_width="81dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textView9"
+        android:layout_marginEnd="64dp"
+        android:text="0"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/waiting_patients"
+        android:layout_marginBottom="13dp"
         android:text="Patients waiting:"
         android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,19 +105,18 @@
         android:layout_width="wrap_content"
         android:layout_height="38dp"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/textView"
+        android:layout_alignTop="@+id/waiting_count"
         android:layout_marginEnd="132dp"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/waiting_count"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/waiting_patients"
         android:layout_width="186dp"
         android:layout_height="327dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="51dp"
-        android:layout_marginStart="12dp">
+        android:layout_centerVertical="true"
+        android:layout_marginStart="22dp">
 
         <LinearLayout
             android:id="@+id/waiting_list"
@@ -100,5 +126,31 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/auto_alloc"
+        android:layout_width="302dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Automatically Allocate: OFF" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/ROOM1"
+        android:layout_alignTop="@+id/waiting_patients"
+        android:text="ROOM NR"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/gotoStatistics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text="Statistics" />
 
 </RelativeLayout>

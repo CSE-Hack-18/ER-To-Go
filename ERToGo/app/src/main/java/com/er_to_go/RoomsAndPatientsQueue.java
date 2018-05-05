@@ -10,29 +10,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
-
 
 public class RoomsAndPatientsQueue extends AppCompatActivity {
-    private TextView head;
 
-    private LinearLayout waiting_list;
+    public TextView waiting_count;
 
-    private String[] sampleText = {
-            "Bleeding Leg",
-            "Fractured back",
-            "Cracked skull",
-            "Dislocated Shoulder",
-            "Bleeding skull",
+    public LinearLayout waiting_list;
 
-
-    };
-
-    private String[] sampleVerb = {
+    public static String[] sampleVerb = {
             "Bruising", "Burning", "Bleeding", "Dislocated", "Fractured", "Other"
     };
 
-    private String[] sampleBody = {
+    public static String[] sampleBody = {
             "Head", "Chest", "Stomach", "Arm", "Leg", "Leg"
     };
 
@@ -44,17 +33,15 @@ public class RoomsAndPatientsQueue extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rooms_and_patients_queue);
-        //head = findViewById(R.id.textView5);
-        //head.setAlpha(0.99f);
+        waiting_count = findViewById(R.id.waiting_count);
 
         waiting_list = (LinearLayout) findViewById(R.id.waiting_list);
 
-
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
+                500,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
-        params.setMargins(0, 10, 0, 10);
+        params.setMargins(0, 15, 0, 15);
 
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 6; j++) {
@@ -62,18 +49,29 @@ public class RoomsAndPatientsQueue extends AppCompatActivity {
                     break;
                 }
 
+                int rand = (int) (Math.random() * 100);
+
                 TextView tv = new TextView(getApplicationContext());
-                tv.setText(sampleVerb[i] + sampleBody[j]);
+                tv.setText(rand + " | " + sampleVerb[i] + " " + sampleBody[j]);
                 tv.setAlpha(0.99f);
                 tv.setOnLongClickListener(longClickListener);
-                tv.setBackgroundResource(R.color.colorPrimaryDark);
-                tv.setPadding(12, 6, 12, 6);
+
+                if (rand > 66) {
+                    tv.setBackgroundResource(R.color.Important);
+                } else if (rand > 33) {
+                    tv.setBackgroundResource(R.color.Medium);
+                } else {
+                    tv.setBackgroundResource(R.color.Low);
+                }
+
+                tv.setPadding(80, 20, 80, 20);
                 tv.setLayoutParams(params);
                 waiting_list.addView(tv);
             }
 
         }
 
+        waiting_count.setText(waiting_list.getChildCount() + "");
 
         for (int i = 0; i < room_ids.length; i++) {
             rooms.add(findViewById(room_ids[i]));
@@ -90,7 +88,9 @@ public class RoomsAndPatientsQueue extends AppCompatActivity {
         public boolean onLongClick(View v) {
             ClipData data = ClipData.newPlainText("","");
             View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
+            v.setBackgroundColor(getResources().getColor(R.color.grey));
             v.startDrag(data,shadowBuilder,v,0);
+            v.setAlpha(0.0f);
 
             return false;
         }
@@ -114,6 +114,7 @@ public class RoomsAndPatientsQueue extends AppCompatActivity {
                    if(view.getAlpha() != 1.0) {
                        ((ViewManager)view.getParent()).removeView(view);
                        v.setBackgroundResource(R.color.red);
+                       waiting_count.setText(waiting_list.getChildCount() + "");
                    }
 
                    break;
