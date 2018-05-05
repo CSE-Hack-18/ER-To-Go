@@ -27,7 +27,7 @@ public class RedirectAndSend extends AppCompatActivity {
                 b.getInt("age"),
                 b.getInt("intensity"),
                 b.getInt("bodypart"),
-                b.getBoolean("reoccuring")
+                b.getBoolean("recurring")
         );
 
         // Send All the stuff to some server or something.
