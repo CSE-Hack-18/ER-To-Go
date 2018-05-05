@@ -32,35 +32,111 @@ public class selfDiagnoze extends AppCompatActivity {
         setContentView(R.layout.self_diag);
 
         head = findViewById(R.id.HEAD);
+        leg = findViewById(R.id.LEG);
+        arm = findViewById(R.id.ARM);
+        chest = findViewById(R.id.CHEST);
+        stomach = findViewById(R.id.STOMACH);
+
         person = findViewById(R.id.PERSON);
 
 
         View.OnClickListener lHead = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                person.setImageResource(R.drawable.head);
 
-
-                if (highlight.equals("head")) {
+                if (!shouldHighlight("head")) {
                     Intent intent = new Intent(selfDiagnoze.this, BodyPartActivity.class);
                     Bundle b = new Bundle();
                     b.putInt("key", 0); //Your id
                     intent.putExtras(b); //Put your id to your next Intent
                     startActivity(intent);
                     finish();
-                } else {
-                    person.setImageResource(R.drawable.head);
-                    highlight = "head";
                 }
-
-
-
-
-
             }
         };
         head.setOnClickListener(lHead);
 
+        View.OnClickListener lArm = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                person.setImageResource(R.drawable.arm);
 
+                if (!shouldHighlight("arm")) {
+                    Intent intent = new Intent(selfDiagnoze.this, BodyPartActivity.class);
+                    Bundle b = new Bundle();
+                    b.putInt("key", 2);
+                    intent.putExtras(b);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        };
+        arm.setOnClickListener(lArm);
+
+        View.OnClickListener lLeg = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                person.setImageResource(R.drawable.leg);
+
+                if (!shouldHighlight("leg")) {
+                    Intent intent = new Intent(selfDiagnoze.this, BodyPartActivity.class);
+                    Bundle b = new Bundle();
+                    b.putInt("key", 1);
+                    intent.putExtras(b);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        };
+        leg.setOnClickListener(lLeg);
+
+        View.OnClickListener lChest = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                person.setImageResource(R.drawable.chest);
+
+                if (!shouldHighlight("chest")) {
+                    Intent intent = new Intent(selfDiagnoze.this, BodyPartActivity.class);
+                    Bundle b = new Bundle();
+                    b.putInt("key", 3);
+                    intent.putExtras(b);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        };
+        chest.setOnClickListener(lChest);
+
+        View.OnClickListener lStomach = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                person.setImageResource(R.drawable.stomach);
+
+                if (!shouldHighlight("stomach")) {
+                    Intent intent = new Intent(selfDiagnoze.this, BodyPartActivity.class);
+                    Bundle b = new Bundle();
+                    b.putInt("key", 4);
+                    intent.putExtras(b);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        };
+        stomach.setOnClickListener(lStomach);
+
+    }
+
+    public boolean shouldHighlight(String match) {
+        boolean result = !highlight.equals(match);
+        if (result) {
+            highlight = match;
+        } else {
+            highlight = "";
+        }
+
+        System.out.println("Highlight: " + match + " -> " + result);
+        return result;
     }
 
 }
