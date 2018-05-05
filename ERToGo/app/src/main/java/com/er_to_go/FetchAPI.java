@@ -55,10 +55,11 @@ public class FetchAPI extends AsyncTask<Void, Void, Void> {
 
              int start = extract.indexOf(find);
 
-             extract = extract.substring(start + find.length(), extract.length() -5);
+             extract = extract.substring(start + find.length() +2, extract.length() -5);
 
              if (extract.length() > 100) {
-                 extract = extract.substring(0, 140);
+                 int cut = extract.indexOf(" ", 140);
+                 extract = extract.substring(0, cut);
                  extract += "...";
              }
 

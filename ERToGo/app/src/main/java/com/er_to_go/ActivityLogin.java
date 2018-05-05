@@ -78,6 +78,13 @@ public class ActivityLogin extends AppCompatActivity {
             public void onClick(View view) {
                 String Username = mUserName.getText().toString();
                 String pass = mUserName.getText().toString();
+
+
+                Intent i = new Intent(ActivityLogin.this, RoomsAndPatientsQueue.class);
+                startActivity(i);
+                Toast.makeText(ActivityLogin.this, "successfully logged in!", Toast.LENGTH_LONG).show();
+                finish();
+
                 if(Username.equalsIgnoreCase("doc1") && pass.equalsIgnoreCase("doc112345")){
                     Intent MainIntent = new Intent(ActivityLogin.this, RoomsAndPatientsQueue.class);
                     startActivity(MainIntent);
