@@ -9,7 +9,6 @@ public class ClientQueue extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Do Something.
 
         // Get variables sent here.
         Bundle b = getIntent().getExtras();
@@ -18,6 +17,9 @@ public class ClientQueue extends AppCompatActivity {
             value = b.getInt("expectedTime");
         else
             return;
+
+
+        //setContentView(R.layout.activity_main); // Do Something.
 
 
     }

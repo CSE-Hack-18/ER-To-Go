@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ProgressBar;
+import android.widget.SeekBar;
+import android.widget.Switch;
+import android.widget.TextView;
 
 public class RedirectAndSend extends AppCompatActivity {
 
@@ -30,6 +33,11 @@ public class RedirectAndSend extends AppCompatActivity {
         // Send All the stuff to some server or something.
 
         Intent intent = new Intent(this, ClientQueue.class);
+        Bundle c = new Bundle();
+        c.putInt("expectedTime", 30);
+        intent.putExtras(b);
+        intent.putExtras(c);
+        startActivity(intent);
         startActivity(intent);
     }
 
