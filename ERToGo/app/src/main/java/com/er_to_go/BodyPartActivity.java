@@ -5,6 +5,7 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,18 +13,20 @@ public class BodyPartActivity extends Activity {
 
 
     String[] names = {"Head", "Leg", "Arm", "Chest", "Stomach"};
-    int[] images = {R.drawable.head, R.drawable.leg, R.drawable.arm, R.drawable.chest, R.drawable.stomach};
+    int[] images = {R.drawable.head2, R.drawable.leg2, R.drawable.arm2, R.drawable.chest2, R.drawable.stomach2};
 
     ImageView image;
-    int[] heatMap;
+    ImageView heatMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.self_diag_part);
 
         TextView name = findViewById(R.id.BODY_PART_NAME);
         image = findViewById(R.id.BODY_PART_IMAGE);
+        heatMap = findViewById(R.id.BODY_PART_HEATMAP);
 
         Bundle b = getIntent().getExtras();
         int value = -1; // or other values
@@ -34,8 +37,6 @@ public class BodyPartActivity extends Activity {
 
         name.setText(getName(value));
         image.setImageResource(getImage(value));
-        //getImage(value);
-
 
     }
 
@@ -48,7 +49,12 @@ public class BodyPartActivity extends Activity {
     }
 
     public void setHeatMap(int x, int y) {
+        //heatMap.setAlpha(1.0f);
+        heatMap.setX(x);
+        heatMap.setY(y);
 
+        ViewGroup.MarginLayoutParams marginParams = (ViewGroup.MarginLayoutParams) image.getLayoutParams();
+        marginParams.setMargins((int)image.getX(), (int)image.getY(), 0, 0);
     }
 
     @Override
