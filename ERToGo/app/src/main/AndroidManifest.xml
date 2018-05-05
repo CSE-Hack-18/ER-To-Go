@@ -18,6 +18,9 @@
         </activity>
         <activity android:name=".selfDiagnoze"></activity>
         <activity android:name=".BodyPartActivity"></activity>
+        <activity android:name=".RedirectAndSend"></activity>
+        <activity android:name=".ClientQueue"></activity>
+
 
     </application>
 
