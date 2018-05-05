@@ -6,16 +6,66 @@
     android:layout_height="match_parent">
 
     <Button
+        android:id="@+id/STOMACH"
+        android:layout_width="61dp"
+        android:layout_height="115dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:text="STOMACH"
+        android:alpha="0.0"
+
+        app:layout_constraintStart_toEndOf="@+id/ARM"
+        app:layout_constraintTop_toBottomOf="@+id/CHEST" />
+
+    <Button
+        android:id="@+id/CHEST"
+        android:layout_width="61dp"
+        android:layout_height="115dp"
+        android:text="CHEST"
+        android:alpha="0.0"
+
+        app:layout_constraintStart_toEndOf="@+id/ARM"
+        app:layout_constraintTop_toBottomOf="@+id/HEAD" />
+
+    <Button
+        android:id="@+id/LEG"
+        android:layout_width="107dp"
+        android:layout_height="191dp"
+        android:layout_marginStart="255dp"
+        android:text="LEG"
+        android:alpha="0.0"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/STOMACH" />
+
+    <Button
+        android:id="@+id/ARM"
+        android:layout_width="112dp"
+        android:layout_height="233dp"
+        android:layout_marginStart="210dp"
+        android:text="ARM"
+        android:alpha="0.0"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HEAD" />
+
+    <Button
         android:id="@+id/HEAD"
-        android:layout_width="349dp"
-        android:layout_height="119dp"
-        android:layout_marginBottom="219dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="173dp"
-        android:text="ANY BODY PART"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="99dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="285dp"
+        android:text="HEAD"
+        android:alpha="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/PERSON"
+        android:layout_width="475dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/person" />
+
 </android.support.constraint.ConstraintLayout>
