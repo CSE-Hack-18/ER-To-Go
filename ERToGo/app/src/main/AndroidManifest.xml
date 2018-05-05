@@ -19,6 +19,8 @@
         </activity>
 
         <activity android:name=".BodyPartActivity"></activity>
+        <activity android:name=".selfDiagnoze"></activity>
+
 
     </application>
 

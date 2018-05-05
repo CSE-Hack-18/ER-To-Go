@@ -7,23 +7,23 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/rightLeg"
+        android:id="@+id/LEG"
         android:layout_width="wrap_content"
         android:layout_height="191dp"
-        android:text="Right Leg"
+        android:text="LEG"
         tools:layout_editor_absoluteX="219dp"
         tools:layout_editor_absoluteY="304dp" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/STOMACH"
         android:layout_width="111dp"
         android:layout_height="104dp"
-        android:text="Stomach"
+        android:text="STOMACH"
         tools:layout_editor_absoluteX="257dp"
         tools:layout_editor_absoluteY="203dp" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/HEAD"
         android:layout_width="105dp"
         android:layout_height="71dp"
         android:text="Head"
@@ -31,29 +31,29 @@
         tools:layout_editor_absoluteY="31dp" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/ARM"
         android:layout_width="201dp"
         android:layout_height="60dp"
-        android:text="Right ARM"
+        android:text="ARM"
         tools:layout_editor_absoluteX="56dp"
         tools:layout_editor_absoluteY="102dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/CHEST"
         android:layout_width="111dp"
         android:layout_height="101dp"
-        android:text="Chest"
+        android:text="CHEST"
         tools:layout_editor_absoluteX="257dp"
         tools:layout_editor_absoluteY="102dp" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="159dp"
+        android:layout_height="32dp"
         android:text="Self Diagnoze"
         android:textSize="24sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="38dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
 
 </android.support.constraint.ConstraintLayout>
