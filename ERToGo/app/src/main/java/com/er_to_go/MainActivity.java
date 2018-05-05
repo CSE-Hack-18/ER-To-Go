@@ -17,13 +17,10 @@ private Button button;
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity2();
+                Intent intent = new Intent(MainActivity.this, selfDiagnoze.class);
+                startActivity(intent);
             }
         });
     }
 
-   public void openActivity2(){
-        Intent intent = new Intent(this, Activity2.class);
-        startActivity(intent);
-   }
 }
