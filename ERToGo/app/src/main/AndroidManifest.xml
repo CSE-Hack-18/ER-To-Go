@@ -20,12 +20,12 @@
 <<<<<<< HEAD
 
         <activity android:name=".BodyPartActivity"></activity>
-        <activity android:name=".selfDiagnoze"></activity>
+        <activity android:name=".selfDiagnoze"></activity><![CDATA[
 
 
 =======
-        <activity android:name=".Activity2"></activity>
->>>>>>> master
+        >>>>>>> master
+    ]]>
     </application>
 
 </manifest>

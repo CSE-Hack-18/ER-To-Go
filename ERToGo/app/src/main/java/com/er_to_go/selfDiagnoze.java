@@ -27,66 +27,21 @@ public class selfDiagnoze extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.self_diag);
 
-        leg = findViewById(R.id.LEG);
-        arm = findViewById(R.id.ARM);
         head = findViewById(R.id.HEAD);
-        chest = findViewById(R.id.CHEST);
-        stomach = findViewById(R.id.STOMACH);
 
-        //goToBodyPart = new Intent(this, BodyPartActivity.class);
-
-        /*
-        goToLeg = new Intent(this, legActivity.class);
-        goToArm = new Intent(this, armActivity.class);
-        goToHead = new Intent(this, headActivity.class);
-        goToChest = new Intent(this, chestActivity.class);
-        goToStomach = new Intent(this, stomachActivity.class);
-        */
-
-
-
-
-        View.OnClickListener lLeg = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // TODO
-            }
-        };
-        leg.setOnClickListener(lLeg);
-
-        View.OnClickListener lArm = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // TODO
-            }
-        };
-        arm.setOnClickListener(lArm);
 
         View.OnClickListener lHead = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO
+                Intent intent = new Intent(selfDiagnoze.this, BodyPartActivity.class);
+                Bundle b = new Bundle();
+                b.putInt("key", 0); //Your id
+                intent.putExtras(b); //Put your id to your next Intent
+                startActivity(intent);
+                finish();
             }
         };
         head.setOnClickListener(lHead);
-
-        View.OnClickListener lChest = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // TODO
-            }
-        };
-        chest.setOnClickListener(lChest);
-
-        View.OnClickListener lStomach = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // TODO
-            }
-        };
-        chest.setOnClickListener(lStomach);
-
-
 
 
     }

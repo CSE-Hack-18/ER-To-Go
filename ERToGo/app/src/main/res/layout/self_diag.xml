@@ -3,57 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/LEG"
-        android:layout_width="wrap_content"
-        android:layout_height="191dp"
-        android:text="LEG"
-        tools:layout_editor_absoluteX="219dp"
-        tools:layout_editor_absoluteY="304dp" />
-
-    <Button
-        android:id="@+id/STOMACH"
-        android:layout_width="111dp"
-        android:layout_height="104dp"
-        android:text="STOMACH"
-        tools:layout_editor_absoluteX="257dp"
-        tools:layout_editor_absoluteY="203dp" />
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/HEAD"
-        android:layout_width="105dp"
-        android:layout_height="71dp"
-        android:text="Head"
-        tools:layout_editor_absoluteX="263dp"
-        tools:layout_editor_absoluteY="31dp" />
-
-    <Button
-        android:id="@+id/ARM"
-        android:layout_width="201dp"
-        android:layout_height="60dp"
-        android:text="ARM"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="102dp" />
-
-    <Button
-        android:id="@+id/CHEST"
-        android:layout_width="111dp"
-        android:layout_height="101dp"
-        android:text="CHEST"
-        tools:layout_editor_absoluteX="257dp"
-        tools:layout_editor_absoluteY="102dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="159dp"
-        android:layout_height="32dp"
-        android:text="Self Diagnoze"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
-
+        android:layout_width="349dp"
+        android:layout_height="119dp"
+        android:layout_marginBottom="219dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="173dp"
+        android:text="ANY BODY PART"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
