@@ -19,7 +19,7 @@ public class BodyPartActivity extends Activity {
 
 
     static String[] names = {"Head", "Leg", "Arm", "Chest", "Stomach", "Other"};
-    static int[] images = {R.drawable.head2, R.drawable.leg2, R.drawable.arm2, R.drawable.chest2, R.drawable.stomach2};
+    static int[] images = {R.drawable.head2, R.drawable.leg2, R.drawable.arm2, R.drawable.chest2, R.drawable.stomach2, R.drawable.question_mark};
 
     ImageView image;
     ImageView heatMap;
@@ -41,8 +41,6 @@ public class BodyPartActivity extends Activity {
         image = findViewById(R.id.BODY_PART_IMAGE);
         heatMap = findViewById(R.id.BODY_PART_HEATMAP);
         body_part_finish = findViewById(R.id.body_part_finish);
-
-
 
         Bundle b = getIntent().getExtras();
         value = -1; // or other values

@@ -1,6 +1,7 @@
 package com.er_to_go;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ProgressBar;
@@ -10,20 +11,19 @@ import android.widget.TextView;
 
 public class RedirectAndSend extends AppCompatActivity {
 
-    private ProgressBar spinner;
+    static int ep;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loading);
 
-        spinner = (ProgressBar)findViewById(R.id.progressBar1);
 
         Bundle b = getIntent().getExtras();
         if(b == null)
             return;
 
-        int ep = emergencyPriority(
+        ep = emergencyPriority(
                 b.getInt("age"),
                 b.getInt("intensity"),
                 b.getInt("bodypart"),
@@ -32,13 +32,15 @@ public class RedirectAndSend extends AppCompatActivity {
 
         // Send All the stuff to some server or something.
 
-        Intent intent = new Intent(this, ClientQueue.class);
+        Intent intent = new Intent(RedirectAndSend.this, ClientQueue.class);
         Bundle c = new Bundle();
         c.putInt("expectedTime", 30);
+        c.putInt("ep", ep);
         intent.putExtras(b);
         intent.putExtras(c);
         startActivity(intent);
-        startActivity(intent);
+        finish();
+
     }
 
     public int emergencyPriority(int age, int intensity, int bodyPart, boolean reoccuring) {

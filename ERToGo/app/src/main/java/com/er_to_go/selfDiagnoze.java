@@ -8,6 +8,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 public class selfDiagnoze extends AppCompatActivity {
 
     Button leg;
@@ -17,17 +23,10 @@ public class selfDiagnoze extends AppCompatActivity {
     Button stomach;
     Button other_button;
 
-
-    Intent goToBodyPart;
-
-    Intent goToLeg;
-    Intent goToArm;
-    Intent goToHead;
-    Intent goToChest;
-    Intent goToStomach;
     ImageView person;
 
     TextView descriptor;
+    public static TextView fetched;
 
     static String highlight = "";
 
@@ -46,6 +45,7 @@ public class selfDiagnoze extends AppCompatActivity {
         stomach = findViewById(R.id.STOMACH);
         descriptor = findViewById(R.id.highlighted_part);
         other_button = findViewById(R.id.OTHER_BUTTON);
+        fetched = findViewById(R.id.fetched);
 
         person = findViewById(R.id.PERSON);
 
@@ -160,6 +160,11 @@ public class selfDiagnoze extends AppCompatActivity {
             highlight = "";
         }
         descriptor.setText(highlight);
+
+        FetchAPI fa = new FetchAPI();
+        fa.setData(match);
+        fa.execute();
+
         return result;
     }
 

@@ -13,13 +13,14 @@ public class ClientQueue extends AppCompatActivity {
         // Get variables sent here.
         Bundle b = getIntent().getExtras();
         int value = -1; // or other values
-        if(b != null)
-            value = b.getInt("expectedTime");
-        else
+        if(b == null)
             return;
 
+        value = b.getInt("expectedTime");
 
-        //setContentView(R.layout.activity_main); // Do Something.
+        System.out.println("IN CLIENT QUEUE");
+
+        setContentView(R.layout.client); // Do Something.
 
 
     }
