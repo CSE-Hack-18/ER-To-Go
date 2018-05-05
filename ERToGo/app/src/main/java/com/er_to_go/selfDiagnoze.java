@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class selfDiagnoze extends AppCompatActivity {
 
@@ -14,6 +15,8 @@ public class selfDiagnoze extends AppCompatActivity {
     Button head;
     Button chest;
     Button stomach;
+    Button other_button;
+
 
     Intent goToBodyPart;
 
@@ -23,6 +26,8 @@ public class selfDiagnoze extends AppCompatActivity {
     Intent goToChest;
     Intent goToStomach;
     ImageView person;
+
+    TextView descriptor;
 
     static String highlight = "";
 
@@ -39,6 +44,8 @@ public class selfDiagnoze extends AppCompatActivity {
         arm = findViewById(R.id.ARM);
         chest = findViewById(R.id.CHEST);
         stomach = findViewById(R.id.STOMACH);
+        descriptor = findViewById(R.id.highlighted_part);
+        other_button = findViewById(R.id.OTHER_BUTTON);
 
         person = findViewById(R.id.PERSON);
 
@@ -128,6 +135,21 @@ public class selfDiagnoze extends AppCompatActivity {
         };
         stomach.setOnClickListener(lStomach);
 
+
+        View.OnClickListener lOther = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(selfDiagnoze.this, BodyPartActivity.class);
+                Bundle b = new Bundle();
+                b.putInt("key", 5);
+                intent.putExtras(b);
+                startActivity(intent);
+                finish();
+            }
+        };
+        other_button.setOnClickListener(lOther);
+
     }
 
     public boolean shouldHighlight(String match) {
@@ -137,8 +159,7 @@ public class selfDiagnoze extends AppCompatActivity {
         } else {
             highlight = "";
         }
-
-        System.out.println("Highlight: " + match + " -> " + result);
+        descriptor.setText(highlight);
         return result;
     }
 
