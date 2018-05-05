@@ -8,10 +8,32 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="227dp"
-        android:layout_height="349dp"
+        android:layout_width="455dp"
+        android:layout_height="757dp"
         app:srcCompat="@drawable/doctor"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="137dp" />
+        tools:layout_editor_absoluteY="406dp" />
+
+    <TextView
+        android:id="@+id/greetUser"
+        android:layout_width="362dp"
+        android:layout_height="77dp"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <TextView
+        android:id="@+id/userStatus"
+        android:layout_width="664dp"
+        android:layout_height="126dp"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="201dp" />
+
+    <TextView
+        android:id="@+id/showInput"
+        android:layout_width="217dp"
+        android:layout_height="245dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="533dp"
+        tools:layout_editor_absoluteY="604dp" />
 
 </android.support.constraint.ConstraintLayout>
