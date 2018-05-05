@@ -2,11 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-<<<<<<< Updated upstream
     <color name="colorAccent">#b8d13434</color>
-=======
-    <color name="colorAccent">#FF4081</color>
     <color name="red">#ff0000</color>
 
->>>>>>> Stashed changes
 </resources>
