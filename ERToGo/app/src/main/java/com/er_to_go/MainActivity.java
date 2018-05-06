@@ -17,7 +17,7 @@ private Button button2;
         setContentView(R.layout.activity_main);
 
         button = (Button) findViewById(R.id.button);
-        button2 = (Button) findViewById(R.id.button2);
+        button2 = (Button) findViewById(R.id.button4);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
