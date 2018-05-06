@@ -23,17 +23,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".selfDiagnoze"></activity>
-        <activity android:name=".BodyPartActivity"></activity>
-        <activity android:name=".RedirectAndSend"></activity>
-        <activity android:name=".ClientQueue"></activity>
-        <activity android:name=".DocLoginActivity"></activity>
-        <activity android:name=".RoomsAndPatientsQueue"></activity>
-
-        <activity android:name=".ActivityLogin"
-            android:label="@string/title_activity_login"></activity>
-
-        <activity android:name=".SplashScreenActivity"></activity>
+        <activity android:name=".selfDiagnoze" />
+        <activity android:name=".BodyPartActivity" />
+        <activity android:name=".RedirectAndSend" />
+        <activity android:name=".ClientQueue" />
+        <activity android:name=".DocLoginActivity" />
+        <activity android:name=".RoomsAndPatientsQueue" />
+        <activity
+            android:name=".ActivityLogin"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".SplashScreenActivity" />
+        <activity android:name=".CreditsActivity"></activity>
     </application>
 
 </manifest>

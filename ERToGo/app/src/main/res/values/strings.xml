@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">ER-To-Go</string>
 
-<string-array name="injuries">
-    <item>Bruising</item>
-    <item>Burning</item>
-    <item>Bleeding</item>
-    <item>Dislocated</item>
-    <item>Fracture</item>
-    <item>Other</item>
-</string-array>
+    <string-array name="injuries">
+        <item>Bruising</item>
+        <item>Burning</item>
+        <item>Bleeding</item>
+        <item>Dislocated</item>
+        <item>Fracture</item>
+        <item>Other</item>
+    </string-array>
 
     <string-array name="sort">
         <item>Body part</item>
