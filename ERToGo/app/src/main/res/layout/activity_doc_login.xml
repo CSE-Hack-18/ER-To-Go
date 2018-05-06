@@ -35,7 +35,7 @@
         android:layout_width="357dp"
         android:layout_height="69dp"
         android:layout_marginTop="176dp"
-        android:background="#0000000"
+        android:background="#000000"
         android:text="Login"
         android:textColor="#ffffffff"
         android:textSize="24sp"

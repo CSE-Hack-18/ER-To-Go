@@ -120,11 +120,21 @@
     <SeekBar
         android:id="@+id/seekBar2"
         android:layout_width="232dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="84dp"
-        android:thumb="@drawable/arm"
+        android:layout_height="87dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="56dp"
+        android:thumb="@drawable/injuredman"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="65dp"
+        android:layout_height="133dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="27dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:srcCompat="@drawable/bbd" />
 
 </android.support.constraint.ConstraintLayout>
