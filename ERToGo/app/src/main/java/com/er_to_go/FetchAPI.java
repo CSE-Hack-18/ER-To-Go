@@ -1,6 +1,7 @@
 package com.er_to_go;
 
 import android.os.AsyncTask;
+import android.view.View;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -14,10 +15,13 @@ import org.json.*;
 public class FetchAPI extends AsyncTask<Void, Void, Void> {
     private StringBuilder result = new StringBuilder();
     private String data = "";
+    private boolean zz = false;
 
     public void setData(String data) {
         this.data = data;
     }
+
+    public void set2(boolean aa) {zz = aa;}
 
     @Override
     protected Void doInBackground(Void... voids) {
@@ -32,7 +36,6 @@ public class FetchAPI extends AsyncTask<Void, Void, Void> {
                 line = bufferedReader.readLine();
             }
         } catch (Exception ex) {
-            System.out.println("Unable to fetch data from url");
             ex.printStackTrace();
         }
 
@@ -47,7 +50,7 @@ public class FetchAPI extends AsyncTask<Void, Void, Void> {
         String extract;
         try {
              obj= new JSONObject(result.toString());
-             System.out.println(result.toString());
+             //System.out.println(result.toString());
             obj= new JSONObject(obj.getString("query"));
              extract = obj.getString("pages");
 
@@ -63,8 +66,22 @@ public class FetchAPI extends AsyncTask<Void, Void, Void> {
                  extract += "...";
              }
 
-             selfDiagnoze.fetched.setText(extract);
+             if (!zz) {
+                 selfDiagnoze.fetched.setText(extract);
+                 selfDiagnoze.sd.setLoading(false);
+
+             } else {
+                 BodyPartActivity.fetched2.setText(extract);
+                 BodyPartActivity.sd.setLoading(false);
+             }
         } catch (Exception e) {
+
+            if (!zz) {
+                selfDiagnoze.sd.setLoading(false);
+            } else {
+                BodyPartActivity.sd.setLoading(false);
+            }
+
             e.printStackTrace();
         }
     }

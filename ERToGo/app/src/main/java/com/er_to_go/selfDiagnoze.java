@@ -22,6 +22,8 @@ public class selfDiagnoze extends AppCompatActivity {
     Button chest;
     Button stomach;
     Button other_button;
+    static View api_loading;
+    static selfDiagnoze sd;
 
     ImageView person;
 
@@ -33,10 +35,11 @@ public class selfDiagnoze extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sd = this;
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         setContentView(R.layout.self_diag);
+
 
         head = findViewById(R.id.HEAD);
         leg = findViewById(R.id.LEG);
@@ -46,6 +49,9 @@ public class selfDiagnoze extends AppCompatActivity {
         descriptor = findViewById(R.id.highlighted_part);
         other_button = findViewById(R.id.OTHER_BUTTON);
         fetched = findViewById(R.id.fetched);
+
+        api_loading = findViewById(R.id.api_loading);
+        api_loading.setVisibility(View.INVISIBLE);
 
         person = findViewById(R.id.PERSON);
 
@@ -149,7 +155,6 @@ public class selfDiagnoze extends AppCompatActivity {
             }
         };
         other_button.setOnClickListener(lOther);
-
     }
 
     public boolean shouldHighlight(String match) {
@@ -160,12 +165,27 @@ public class selfDiagnoze extends AppCompatActivity {
             highlight = "";
         }
         descriptor.setText(highlight);
+        fetched.setText("");
+        setLoading(true);
 
         FetchAPI fa = new FetchAPI();
         fa.setData(match);
         fa.execute();
 
         return result;
+    }
+
+    public void setLoading(final boolean load){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (load) {
+                    selfDiagnoze.api_loading.setVisibility(View.VISIBLE);
+                } else {
+                    selfDiagnoze.api_loading.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
     }
 
     @Override

@@ -34,6 +34,8 @@
             android:label="@string/title_activity_login" />
         <activity android:name=".SplashScreenActivity" />
         <activity android:name=".CreditsActivity"></activity>
+        <activity android:name=".Patient"></activity>
+
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.er_to_go;
 
 import android.content.ClipData;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.DragEvent;
@@ -8,7 +9,9 @@ import android.view.View;
 import android.view.ViewManager;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -69,6 +72,20 @@ public class RoomsAndPatientsQueue extends AppCompatActivity {
 
                 tv.setPadding(80, 20, 80, 20);
                 tv.setLayoutParams(params);
+
+
+                tv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(RoomsAndPatientsQueue.this, Patient.class);
+                        Bundle b = new Bundle();
+                        b.putString("str", ((TextView)v).getText().toString());
+                        intent.putExtras(b);
+                        startActivity(intent);
+                    }
+                });
+
+
                 waiting_list.addView(tv);
             }
 
@@ -135,7 +152,8 @@ public class RoomsAndPatientsQueue extends AppCompatActivity {
             return false;
         }
     };
-   View.OnDragListener onDragListener = new View.OnDragListener() {
+
+    View.OnDragListener onDragListener = new View.OnDragListener() {
        @Override
        public boolean onDrag(View v, DragEvent event) {
            int dragEvent = event.getAction();
@@ -165,9 +183,6 @@ public class RoomsAndPatientsQueue extends AppCompatActivity {
 
        }
 };
-
-
-
 
 
 
