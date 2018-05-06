@@ -14,7 +14,7 @@
         android:layout_marginTop="170dp"
         android:ems="10"
         android:hint="Enter your ID"
-        android:inputType="number"
+        android:inputType="textAutoCorrect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,8 +34,8 @@
         android:id="@+id/button3"
         android:layout_width="357dp"
         android:layout_height="69dp"
-        android:layout_marginTop="176dp"
-        android:background="#000000"
+        android:layout_marginTop="236dp"
+        android:background="@android:color/holo_orange_light"
         android:text="Login"
         android:textColor="#ffffffff"
         android:textSize="24sp"
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
         android:layout_marginTop="97dp"
-        android:text="Personell login"
+        android:text="Personnel login"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

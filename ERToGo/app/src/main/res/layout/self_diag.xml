@@ -82,11 +82,13 @@
 
     <Button
         android:id="@+id/OTHER_BUTTON"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="459dp"
+        android:layout_width="358dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="510dp"
+        android:background="@android:color/holo_orange_light"
         android:text="Other"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -96,14 +98,14 @@
         android:layout_height="62dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:color/holo_green_light" />
+        app:srcCompat="@android:color/holo_orange_light" />
 
     <TextView
         android:id="@+id/highlighted_part"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="465dp"
+        android:layout_marginTop="130dp"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +116,7 @@
         android:layout_width="170dp"
         android:layout_height="117dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

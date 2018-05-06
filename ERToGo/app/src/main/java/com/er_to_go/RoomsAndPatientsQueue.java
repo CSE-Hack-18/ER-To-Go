@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewManager;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class RoomsAndPatientsQueue extends AppCompatActivity {
 
@@ -81,8 +84,44 @@ public class RoomsAndPatientsQueue extends AppCompatActivity {
             room.setOnDragListener(onDragListener);
         }
 
+        Spinner spinner = findViewById(R.id.sorter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView adapter, View v, int i, long lng) {
+
+                LinearLayout myLinearLayout = (LinearLayout) findViewById(R.id.waiting_list);
+                // get number of children
+                int childcount = myLinearLayout.getChildCount();
+                // create array
+                ArrayList<View> children = new ArrayList<>();
+
+                // get children of linearlayout
+                for (int z=0; z < childcount; z++){
+                    children.add(myLinearLayout.getChildAt(z));
+                }
+
+                //now remove all children
+                myLinearLayout.removeAllViews();
+
+
+
+                Collections.shuffle(children);
+
+                while (!children.isEmpty()) {
+                    myLinearLayout.addView(children.remove(0));
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView)
+            {
+
+            }
+        });
+
 
     }
+
 
     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
         @Override
@@ -102,17 +141,21 @@ public class RoomsAndPatientsQueue extends AppCompatActivity {
            int dragEvent = event.getAction();
 
            switch (dragEvent){
-               case DragEvent.ACTION_DRAG_ENTERED:
+               case DragEvent.ACTION_DRAG_EXITED:
 
 
                    final View view = (View) event.getLocalState();
 
                    System.out.println("id: " + view.getId() + " alpha: " + view.getAlpha() + " " + ((TextView) view).getText().toString());
 
-                   if(view.getAlpha() != 1.0) {
-                       ((ViewManager)view.getParent()).removeView(view);
-                       v.setBackgroundResource(R.color.red);
-                       waiting_count.setText(waiting_list.getChildCount() + "");
+                   try {
+                       if(view.getAlpha() != 1.0) {
+                           ((ViewManager)view.getParent()).removeView(view);
+                           v.setBackgroundResource(R.color.red);
+                           waiting_count.setText(waiting_list.getChildCount() + "");
+                       }
+                   } catch (Exception e) {
+                       e.printStackTrace();
                    }
 
                    break;
@@ -122,4 +165,10 @@ public class RoomsAndPatientsQueue extends AppCompatActivity {
 
        }
 };
+
+
+
+
+
+
 }

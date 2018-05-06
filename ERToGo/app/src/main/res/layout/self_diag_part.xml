@@ -120,11 +120,11 @@
 
     <Button
         android:id="@+id/body_part_finish"
-        android:layout_width="204dp"
+        android:layout_width="324dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_marginEnd="76dp"
-        android:background="#000000"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/holo_orange_light"
         android:text="Confirm"
         android:textColor="#ffffffff"
         android:textSize="24sp"

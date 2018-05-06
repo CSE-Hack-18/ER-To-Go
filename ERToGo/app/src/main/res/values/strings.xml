@@ -10,6 +10,14 @@
     <item>Other</item>
 </string-array>
 
+    <string-array name="sort">
+        <item>Body part</item>
+        <item>Age</item>
+        <item>Emergency Level</item>
+        <item>Category</item>
+        <item>Latest</item>
+    </string-array>
+
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
