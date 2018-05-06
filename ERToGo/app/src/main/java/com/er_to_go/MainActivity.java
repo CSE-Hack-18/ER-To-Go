@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
 private Button button;
 private Button button2;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,18 +18,20 @@ private Button button2;
 
         button = (Button) findViewById(R.id.button);
         button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ActivityLogin.class);
-                startActivity(intent);
-            }
-        });
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, selfDiagnoze.class);
                 startActivity(intent);
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, DocLoginActivity.class);
+                startActivity(i);
             }
         });
     }

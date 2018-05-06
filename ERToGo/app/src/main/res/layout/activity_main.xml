@@ -57,11 +57,12 @@
         app:layout_constraintTop_toBottomOf="@+id/NameEditText" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
+
         android:text="Login as a Doc" />
 </RelativeLayout>

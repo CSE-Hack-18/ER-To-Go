@@ -81,6 +81,7 @@ public class RoomsAndPatientsQueue extends AppCompatActivity {
             room.setOnDragListener(onDragListener);
         }
 
+
     }
 
     View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
@@ -102,10 +103,7 @@ public class RoomsAndPatientsQueue extends AppCompatActivity {
 
            switch (dragEvent){
                case DragEvent.ACTION_DRAG_ENTERED:
-                       break;
-               case DragEvent.ACTION_DRAG_EXITED:
-                   break;
-               case DragEvent.ACTION_DROP:
+
 
                    final View view = (View) event.getLocalState();
 

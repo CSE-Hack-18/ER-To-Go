@@ -3,6 +3,7 @@
     package="com.er_to_go">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -31,6 +32,8 @@
 
         <activity android:name=".ActivityLogin"
             android:label="@string/title_activity_login"></activity>
+
+        <activity android:name=".SplashScreenActivity"></activity>
     </application>
 
 </manifest>
